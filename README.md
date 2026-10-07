@@ -261,4 +261,4 @@ jupyter notebook Source/DD_Foundation_Analysis.ipynb
 * **Team Leader:** Rajat Kumar Gupta (`25BDA70384`)
 * **Competition:** Build for Bharat 2.0 Hackathon
 
-Developed for data professionals, hiring leaders, and academic curriculum architects seeking an empirical, transparent, and actionable navigation system for the data talent ecosystem.
+Developed for the purposes of the hackathon competition, using mandated datasets only.

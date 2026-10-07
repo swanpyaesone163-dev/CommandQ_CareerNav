@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Navigation System for Data Talent Workforce | Command Q</title>
+    <meta name="description" content="A data-driven career navigation engine for data science professionals. Assess psychometric fit, skill gaps, career progression paths, and employer matching — powered by empirical research across 16,741 workforce records.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Animated background particles -->
+<div class="bg-particles" id="bgParticles"></div>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#hero" class="nav-logo">
+            <span class="logo-icon">◇</span>
+            <span class="logo-text">Command Q</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#insights" class="nav-link">Research Insights</a>
+            <a href="#engine-psychometric" class="nav-link">Engines</a>
+            <a href="#bridges" class="nav-link">Five Bridges</a>
+            <a href="#recommendations" class="nav-link">Recommendations</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <div class="hero-badge">Build for Bharat 2.0 Hackathon</div>
+        <h1 class="hero-title">
+            Career Navigation System<br>
+            <span class="gradient-text">for Data Talent Workforce</span>
+        </h1>
+        <p class="hero-subtitle">A Data-Driven Approach to Skills Alignment and Career Progression</p>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <div class="stat-number" data-count="16741">0</div>
+                <div class="stat-label">Workforce Records</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Analytical Engines</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0.96</div>
+                <div class="stat-label">ROC-AUC Score</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Strategic Bridges</div>
+            </div>
+        </div>
+        <div class="hero-actions">
+            <a href="#engine-psychometric" class="btn btn-primary">Launch Assessment →</a>
+            <a href="#insights" class="btn btn-secondary">Explore Research</a>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+<!-- Dataset Overview -->
+<section class="section" id="insights">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Empirical Foundation</span>
+            <h2 class="section-title">Research at a Glance</h2>
+            <p class="section-subtitle">Our empirical investigation utilizes four core datasets comprising 16,741 raw records, rigorously cleaned to >99.4% retention.</p>
+        </div>
+        
+        <div class="dataset-grid">
+            <div class="dataset-card" data-delay="0">
+                <div class="dataset-icon">🧠</div>
+                <h3>SDS Personality</h3>
+                <p class="dataset-construct">Big Five Traits (OCEAN), Success Flag</p>
+                <div class="dataset-stats">
+                    <span class="ds-stat"><strong>161</strong> records</span>
+                    <span class="ds-stat"><strong>0.0%</strong> dropped</span>
+                </div>
+                <div class="dataset-bar" style="--width: 100%"></div>
+            </div>
+            <div class="dataset-card" data-delay="100">
+                <div class="dataset-icon">📊</div>
+                <h3>JDS Skills</h3>
+                <p class="dataset-construct">5 Skill Proficiencies, Salary Hike Flag</p>
+                <div class="dataset-stats">
+                    <span class="ds-stat"><strong>139</strong> records</span>
+                    <span class="ds-stat"><strong>0.0%</strong> dropped</span>
+                </div>
+                <div class="dataset-bar" style="--width: 100%"></div>
+            </div>
+            <div class="dataset-card" data-delay="200">
+                <div class="dataset-icon">💼</div>
+                <h3>Data Science Jobs</h3>
+                <p class="dataset-construct">Experience, Salary LPA, Openings</p>
+                <div class="dataset-stats">
+                    <span class="ds-stat"><strong>1,595</strong> core rows</span>
+                    <span class="ds-stat"><strong>0.4%</strong> dropped</span>
+                </div>
+                <div class="dataset-bar" style="--width: 97%"></div>
+            </div>
+            <div class="dataset-card" data-delay="300">
+                <div class="dataset-icon">📈</div>
+                <h3>Analytics Jobs</h3>
+                <p class="dataset-construct">Designations, Skills, Experience, Salary</p>
+                <div class="dataset-stats">
+                    <span class="ds-stat"><strong>14,749</strong> core rows</span>
+                    <span class="ds-stat"><strong>0.6%</strong> dropped</span>
+                </div>
+                <div class="dataset-bar" style="--width: 95%"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Findings Charts -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Statistical Evidence</span>
+            <h2 class="section-title">Key Empirical Findings</h2>
+            <p class="section-subtitle">Effect sizes, classification benchmarks, and market intelligence distilled from our analysis.</p>
+        </div>
+        
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3 class="chart-title">Senior Personality Trait Effect Sizes (Cohen's d)</h3>
+                <p class="chart-desc">Massive effect sizes for Conscientiousness (d=1.81) and Openness (d=1.77) in senior leadership.</p>
+                <div class="chart-container">
+                    <canvas id="chartSdsEffects"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">Junior Skill Effect Sizes (Cohen's d)</h3>
+                <p class="chart-desc">Dashboard & Storytelling (d=1.30) outperforms AI/ML (d=0.86) as the top differentiator.</p>
+                <div class="chart-container">
+                    <canvas id="chartJdsEffects"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">Cross-Validated Model Benchmarks (ROC-AUC)</h3>
+                <p class="chart-desc">5-fold CV with 10 repeats validates predictive accuracy across SDS and JDS models.</p>
+                <div class="chart-container">
+                    <canvas id="chartModelBenchmarks"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">Salary & Seniority Premium by Role Family</h3>
+                <p class="chart-desc">Median salary progression reveals +56% to +72% senior premiums across roles.</p>
+                <div class="chart-container">
+                    <canvas id="chartSalaryPremium"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Charts Row -->
+        <div class="charts-grid" style="margin-top: 2rem;">
+            <div class="chart-card">
+                <h3 class="chart-title">Skill Demand Evolution Across Seniority</h3>
+                <p class="chart-desc">Big Data demand surges +119.5% from junior to senior roles, while Storytelling drops -35.8%.</p>
+                <div class="chart-container">
+                    <canvas id="chartSkillDemand"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">Junior Cluster Archetypes — High Hike Rates</h3>
+                <p class="chart-desc">Balanced All-Rounders achieve 83.3% promotion vs. 18.4% for Narrow ML Specialists.</p>
+                <div class="chart-container">
+                    <canvas id="chartClusters"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ENGINE 1: Psychometric Fit -->
+<section class="section engine-section" id="engine-psychometric">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Engine 1</span>
+            <h2 class="section-title">Psychometric Fit Engine</h2>
+            <p class="section-subtitle">Assess your alignment with senior data science leadership using the empirically calibrated Big Five personality model (N=161, AUC=0.96).</p>
+        </div>
+
+        <div class="engine-layout">
+            <div class="engine-form glass-card">
+                <h3>Rate Your Big Five Traits</h3>
+                <p class="form-note">Score each trait on a scale from 17 to 68 (based on NEO-PI-R scoring)</p>
+                
+                <div class="input-group">
+                    <label for="conscientiousness">Conscientiousness <span class="trait-weight">(w=0.30)</span></label>
+                    <div class="slider-row">
+                        <input type="range" id="conscientiousness" min="17" max="68" value="42" class="trait-slider" data-trait="conscientiousness">
+                        <span class="slider-value" id="conscientiousness-val">42</span>
+                    </div>
+                    <div class="slider-labels"><span>17</span><span>68</span></div>
+                </div>
+                <div class="input-group">
+                    <label for="openness">Openness to Experience <span class="trait-weight">(w=0.29)</span></label>
+                    <div class="slider-row">
+                        <input type="range" id="openness" min="17" max="68" value="42" class="trait-slider" data-trait="openness">
+                        <span class="slider-value" id="openness-val">42</span>
+                    </div>
+                    <div class="slider-labels"><span>17</span><span>68</span></div>
+                </div>
+                <div class="input-group">
+                    <label for="extraversion">Extraversion <span class="trait-weight">(w=0.19)</span></label>
+                    <div class="slider-row">
+                        <input type="range" id="extraversion" min="17" max="68" value="42" class="trait-slider" data-trait="extraversion">
+                        <span class="slider-value" id="extraversion-val">42</span>
+                    </div>
+                    <div class="slider-labels"><span>17</span><span>68</span></div>
+                </div>
+                <div class="input-group">
+                    <label for="neuroticism">Neuroticism <span class="trait-weight">(w=0.12)</span></label>
+                    <div class="slider-row">
+                        <input type="range" id="neuroticism" min="17" max="68" value="36" class="trait-slider" data-trait="neuroticism">
+                        <span class="slider-value" id="neuroticism-val">36</span>
+                    </div>
+                    <div class="slider-labels"><span>17</span><span>68</span></div>
+                </div>
+                <div class="input-group">
+                    <label for="agreeableness">Agreeableness <span class="trait-weight">(w=0.10)</span></label>
+                    <div class="slider-row">
+                        <input type="range" id="agreeableness" min="17" max="68" value="42" class="trait-slider" data-trait="agreeableness">
+                        <span class="slider-value" id="agreeableness-val">42</span>
+                    </div>
+                    <div class="slider-labels"><span>17</span><span>68</span></div>
+                </div>
+                
+                <button class="btn btn-primary btn-full" id="btnPsychometric">Calculate Psychometric Fit</button>
+            </div>
+            
+            <div class="engine-results glass-card" id="psychResults" style="display:none;">
+                <div class="result-score-ring">
+                    <svg viewBox="0 0 200 200" class="score-ring">
+                        <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"/>
+                        <circle cx="100" cy="100" r="85" fill="none" stroke="url(#gradRing)" stroke-width="12" stroke-linecap="round" stroke-dasharray="534" stroke-dashoffset="534" id="scoreArc" transform="rotate(-90 100 100)"/>
+                        <defs><linearGradient id="gradRing" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#6366f1"/>
+                            <stop offset="100%" stop-color="#06b6d4"/>
+                        </linearGradient></defs>
+                    </svg>
+                    <div class="score-number" id="fitScore">0</div>
+                    <div class="score-label">Psychometric Fit</div>
+                </div>
+                
+                <div class="result-breakdown" id="traitBreakdown"></div>
+                
+                <div class="result-interpretation" id="fitInterpretation"></div>
+                
+                <div class="result-radar">
+                    <canvas id="chartRadar" width="300" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ENGINE 2: Strategic Skills Recommendation -->
+<section class="section section-dark engine-section" id="engine-skills">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Engine 2</span>
+            <h2 class="section-title">Strategic Skills Recommendation Engine</h2>
+            <p class="section-subtitle">Evaluate your skill proficiencies against the empirical 2×2 Strategic Market Matrix. Discover "Hidden Gem" competencies that unlock disproportionate promotion velocity.</p>
+        </div>
+
+        <div class="engine-layout">
+            <div class="engine-form glass-card">
+                <h3>Rate Your Skill Proficiencies</h3>
+                <p class="form-note">Score each skill from 1.0 to 5.0 (based on proficiency benchmarks)</p>
+                
+                <div class="input-group">
+                    <label for="skill_math">Math & Statistics <span class="skill-meta">Effect: d=1.20 | Demand: 12.8%</span></label>
+                    <div class="slider-row">
+                        <input type="range" id="skill_math" min="1" max="5" step="0.1" value="3.5" class="skill-slider">
+                        <span class="slider-value" id="skill_math-val">3.5</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="skill_coding">Coding <span class="skill-meta">Effect: d=0.98 | Demand: 24.0%</span></label>
+                    <div class="slider-row">
+                        <input type="range" id="skill_coding" min="1" max="5" step="0.1" value="3.5" class="skill-slider">
+                        <span class="slider-value" id="skill_coding-val">3.5</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="skill_ml">AI & Machine Learning <span class="skill-meta">Effect: d=0.86 | Demand: 7.6%</span></label>
+                    <div class="slider-row">
+                        <input type="range" id="skill_ml" min="1" max="5" step="0.1" value="3.5" class="skill-slider">
+                        <span class="slider-value" id="skill_ml-val">3.5</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="skill_storytelling">Dashboard & Storytelling <span class="skill-meta">Effect: d=1.30 | Demand: 7.1%</span></label>
+                    <div class="slider-row">
+                        <input type="range" id="skill_storytelling" min="1" max="5" step="0.1" value="3.5" class="skill-slider">
+                        <span class="slider-value" id="skill_storytelling-val">3.5</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="skill_bigdata">Big Data Infrastructure <span class="skill-meta">Effect: d=0.22 | Demand: 5.6%</span></label>
+                    <div class="slider-row">
+                        <input type="range" id="skill_bigdata" min="1" max="5" step="0.1" value="3.0" class="skill-slider">
+                        <span class="slider-value" id="skill_bigdata-val">3.0</span>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary btn-full" id="btnSkills">Analyze Skill Gaps →</button>
+            </div>
+
+            <div class="engine-results glass-card" id="skillResults" style="display:none;">
+                <h3 class="results-title">Strategic Skills Assessment</h3>
+                
+                <div class="skill-quadrant-visual">
+                    <canvas id="chartQuadrant" width="400" height="350"></canvas>
+                </div>
+                
+                <div class="skill-priority-list" id="skillPriorityList"></div>
+                
+                <div class="cluster-match" id="clusterMatch"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ENGINE 3: Progression Path Optimizer -->
+<section class="section engine-section" id="engine-progression">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Engine 3</span>
+            <h2 class="section-title">Progression Path Optimizer</h2>
+            <p class="section-subtitle">Navigate career stages with empirically-grounded salary projections and stage-gated skill sequencing. Based on the logarithmic salary model (R²=0.571).</p>
+        </div>
+
+        <div class="engine-layout">
+            <div class="engine-form glass-card">
+                <h3>Your Career Profile</h3>
+                
+                <div class="input-group">
+                    <label for="experience">Years of Experience</label>
+                    <div class="slider-row">
+                        <input type="range" id="experience" min="0" max="20" step="1" value="2" class="exp-slider">
+                        <span class="slider-value" id="experience-val">2</span>
+                    </div>
+                    <div class="slider-labels"><span>0 yrs</span><span>20 yrs</span></div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="roleFamily">Target Role Family</label>
+                    <select id="roleFamily" class="select-input">
+                        <option value="data_analyst">Data Analyst</option>
+                        <option value="data_scientist" selected>Data Scientist</option>
+                        <option value="data_engineer">Data Engineer</option>
+                        <option value="business_analyst">Business Analyst</option>
+                        <option value="data_architect">Data Architect</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary btn-full" id="btnProgression">Map My Career Path →</button>
+            </div>
+
+            <div class="engine-results glass-card" id="progressionResults" style="display:none;">
+                <h3 class="results-title">Career Progression Trajectory</h3>
+                
+                <div class="career-stage-indicator" id="careerStage"></div>
+                
+                <div class="salary-projection">
+                    <canvas id="chartSalaryCurve" width="500" height="300"></canvas>
+                </div>
+                
+                <div class="progression-timeline" id="progressionTimeline"></div>
+                
+                <div class="skill-sequence" id="skillSequence"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ENGINE 4: Company Matching -->
+<section class="section section-dark engine-section" id="engine-company">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Engine 4</span>
+            <h2 class="section-title">Multi-Attribute Company Matching</h2>
+            <p class="section-subtitle">Optimizes experience fit, salary bracket, and vacancy liquidity against top employers. Top 10 employers account for 35.5% of all hiring volume.</p>
+        </div>
+
+        <div class="engine-layout">
+            <div class="engine-form glass-card">
+                <h3>Match Parameters</h3>
+                
+                <div class="input-group">
+                    <label for="companyExp">Your Experience (Years)</label>
+                    <div class="slider-row">
+                        <input type="range" id="companyExp" min="0" max="20" step="1" value="3" class="exp-slider">
+                        <span class="slider-value" id="companyExp-val">3</span>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="salaryPriority">Salary Priority Weight</label>
+                    <div class="slider-row">
+                        <input type="range" id="salaryPriority" min="0" max="100" step="5" value="35" class="exp-slider">
+                        <span class="slider-value" id="salaryPriority-val">35%</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-full" id="btnCompany">Find Best Matches →</button>
+            </div>
+
+            <div class="engine-results glass-card" id="companyResults" style="display:none;">
+                <h3 class="results-title">Top Company Matches</h3>
+                <div class="company-list" id="companyList"></div>
+                <div class="company-chart-wrap">
+                    <canvas id="chartCompany" width="500" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Five Analytical Bridges -->
+<section class="section" id="bridges">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Cross-Sectional Synthesis</span>
+            <h2 class="section-title">The Five Analytical Bridges</h2>
+            <p class="section-subtitle">Overarching insights that synthesize psychometrics, skill development, and market dynamics into actionable career intelligence.</p>
+        </div>
+
+        <div class="bridges-grid">
+            <div class="bridge-card" data-bridge="1">
+                <div class="bridge-number">01</div>
+                <h3>The Storytelling Paradox</h3>
+                <p>Dashboard & Storytelling is the #1 internal differentiator (<strong>d=1.30, AUC=0.794, OR=3.06</strong>), yet appears in only <strong>7.1%</strong> of job postings with a <strong>−₹4.5L</strong> raw premium.</p>
+                <div class="bridge-insight">
+                    <span class="insight-label">Synthesis:</span> External postings classify "dashboarding" in lower-tier reporting roles. Within technical teams, promotion velocity is gated by executive communication capacity.
+                </div>
+                <div class="bridge-stats">
+                    <span class="bridge-stat">d = 1.30</span>
+                    <span class="bridge-stat">Rank Gap: +2</span>
+                    <span class="bridge-stat">7.1% demand</span>
+                </div>
+            </div>
+            
+            <div class="bridge-card" data-bridge="2">
+                <div class="bridge-number">02</div>
+                <h3>The Big Data Timing Disconnect</h3>
+                <p>Big Data yields <strong>zero statistical impact</strong> on junior hikes (<strong>d=0.22, p=0.217</strong>). But demand <strong>doubles</strong> at senior tiers (<strong>7.7% → 16.9%</strong>).</p>
+                <div class="bridge-insight">
+                    <span class="insight-label">Synthesis:</span> Juniors work in local sandboxes; seniors deploy to distributed infrastructure. Forcing Big Data on novices wastes cognitive bandwidth; delaying past Year 4 blocks advancement.
+                </div>
+                <div class="bridge-stats">
+                    <span class="bridge-stat">d = 0.22 (ns)</span>
+                    <span class="bridge-stat">+119.5% growth</span>
+                    <span class="bridge-stat">Inflection: Yr 4</span>
+                </div>
+            </div>
+            
+            <div class="bridge-card" data-bridge="3">
+                <div class="bridge-number">03</div>
+                <h3>Skill Premium Evaporation</h3>
+                <p>Individual skills command <strong>+₹3.5L premium at entry</strong>, but evaporate to <strong>₹0.0L at mid/senior</strong>. Experience explains <strong>>50%</strong> of wage variance.</p>
+                <div class="bridge-insight">
+                    <span class="insight-label">Synthesis:</span> Technical competencies transition from scarcity assets to hygiene factors. Progression beyond Year 4 requires role family elevation and enterprise ownership, not certification stacking.
+                </div>
+                <div class="bridge-stats">
+                    <span class="bridge-stat">+₹3.5L → ₹0L</span>
+                    <span class="bridge-stat">Exp R²: 0.504</span>
+                    <span class="bridge-stat">Role R²: 0.435</span>
+                </div>
+            </div>
+            
+            <div class="bridge-card" data-bridge="4">
+                <div class="bridge-number">04</div>
+                <h3>Psychometric–Technical Co-Evolution</h3>
+                <p>Early career is driven by technical execution. Senior leadership is dominated by <strong>Conscientiousness (d=1.81)</strong> and <strong>Openness (d=1.77)</strong>.</p>
+                <div class="bridge-insight">
+                    <span class="insight-label">Synthesis:</span> Work shifts from deterministic task execution to high-ambiguity problem formulation. Openness enables architectural innovation; Conscientiousness ensures governance and delivery.
+                </div>
+                <div class="bridge-stats">
+                    <span class="bridge-stat">d = 1.81 (C)</span>
+                    <span class="bridge-stat">d = 1.77 (O)</span>
+                    <span class="bridge-stat">OR = 8.11</span>
+                </div>
+            </div>
+            
+            <div class="bridge-card" data-bridge="5">
+                <div class="bridge-number">05</div>
+                <h3>The Specialization Trap</h3>
+                <p>Narrow ML specialists (ML: 4.84, Coding: 3.33, Story: 3.69) achieve only <strong>18.4% promotion</strong> vs. <strong>83.3% for balanced all-rounders</strong>.</p>
+                <div class="bridge-insight">
+                    <span class="insight-label">Synthesis:</span> Advanced algorithmics without software engineering foundations and business communication leads to career stagnation.
+                </div>
+                <div class="bridge-stats">
+                    <span class="bridge-stat">18.4% vs 83.3%</span>
+                    <span class="bridge-stat">k=3 clusters</span>
+                    <span class="bridge-stat">sil = 0.337</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Strategic Recommendations -->
+<section class="section section-dark" id="recommendations">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Strategic Implications</span>
+            <h2 class="section-title">Actionable Recommendations</h2>
+        </div>
+
+        <div class="recommendations-grid">
+            <div class="rec-card">
+                <div class="rec-icon">🎯</div>
+                <h3>For Aspiring Data Professionals</h3>
+                <div class="rec-stages">
+                    <div class="rec-stage">
+                        <span class="stage-label">Junior (0–3 yrs)</span>
+                        <p>Master Coding + Math/Stats fundamentals. <strong>Prioritize Storytelling</strong> to unlock the +2 Rank Gap promotion premium. Avoid premature Big Data specialization.</p>
+                    </div>
+                    <div class="rec-stage">
+                        <span class="stage-label">Mid-Career (3–7 yrs)</span>
+                        <p>Pivot upskilling to distributed systems (Spark, cloud pipelines) before Year 5. Target Data Engineer and Senior Analyst tracks for <strong>+62% to +72%</strong> wage gains.</p>
+                    </div>
+                    <div class="rec-stage">
+                        <span class="stage-label">Senior Leadership (7+ yrs)</span>
+                        <p>Cultivate project governance, stakeholder transparency, and exploratory experimentation — aligning with <strong>Conscientiousness</strong> and <strong>Openness</strong> requirements.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rec-card">
+                <div class="rec-icon">🏫</div>
+                <h3>For Educational Institutions</h3>
+                <ul class="rec-list">
+                    <li><strong>Curriculum Reform:</strong> Eliminate pure algorithmic silos. Mandate end-to-end communication and executive presentations across all ML programs.</li>
+                    <li><strong>Stage-Gated Sequencing:</strong> Defer distributed computing to advanced modules. Focus foundations on statistical inference and reproducible software development.</li>
+                </ul>
+            </div>
+            
+            <div class="rec-card">
+                <div class="rec-icon">🏢</div>
+                <h3>For Employers & Talent Acquisition</h3>
+                <ul class="rec-list">
+                    <li><strong>De-Bias Job Descriptions:</strong> Disentangle storytelling requirements from low-salary analyst bands; explicitly value communicative fluency in senior technical tracks.</li>
+                    <li><strong>Psychometric Assessment:</strong> Incorporate behavioral work samples evaluating Conscientiousness and Openness during senior hiring.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience-Salary Model Reference -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Econometric Models</span>
+            <h2 class="section-title">Salary Regression Benchmarks</h2>
+            <p class="section-subtitle">Cross-validated Ridge and Gradient Boosting models with permutation feature importances.</p>
+        </div>
+
+        <div class="benchmarks-grid">
+            <div class="benchmark-card glass-card">
+                <h3>DS Jobs Salary Model</h3>
+                <p class="bench-target">Target: log(avg_salary_lpa)</p>
+                <table class="bench-table">
+                    <thead><tr><th>Model</th><th>CV R²</th><th>CV MAE</th></tr></thead>
+                    <tbody>
+                        <tr><td>Baseline (Mean)</td><td>-0.002</td><td>0.487</td></tr>
+                        <tr class="highlight-row"><td>Ridge</td><td><strong>0.571</strong></td><td><strong>0.305</strong></td></tr>
+                        <tr><td>Gradient Boosting</td><td>0.552</td><td>0.311</td></tr>
+                    </tbody>
+                </table>
+                <div class="importance-list">
+                    <h4>Permutation Importance (R² drop)</h4>
+                    <div class="imp-bar"><span class="imp-label">min_experience</span><div class="imp-fill" style="--w:100%">0.504</div></div>
+                    <div class="imp-bar"><span class="imp-label">role_family</span><div class="imp-fill" style="--w:86%">0.435</div></div>
+                    <div class="imp-bar"><span class="imp-label">log_jobs</span><div class="imp-fill" style="--w:8.7%">0.044</div></div>
+                    <div class="imp-bar"><span class="imp-label">is_senior_title</span><div class="imp-fill" style="--w:3.6%">0.018</div></div>
+                </div>
+            </div>
+
+            <div class="benchmark-card glass-card">
+                <h3>Analytics Jobs Salary Model</h3>
+                <p class="bench-target">Target: salary_mid (LPA)</p>
+                <table class="bench-table">
+                    <thead><tr><th>Model</th><th>CV R²</th><th>CV MAE</th></tr></thead>
+                    <tbody>
+                        <tr><td>Baseline (Mean)</td><td>-0.001</td><td>6.972</td></tr>
+                        <tr><td>Ridge</td><td>0.439</td><td>5.022</td></tr>
+                        <tr class="highlight-row"><td>HistGradientBoosting</td><td><strong>0.444</strong></td><td><strong>4.989</strong></td></tr>
+                    </tbody>
+                </table>
+                <div class="importance-list">
+                    <h4>Permutation Importance (R² drop)</h4>
+                    <div class="imp-bar"><span class="imp-label">exp_min_yrs</span><div class="imp-fill" style="--w:100%">0.798</div></div>
+                    <div class="imp-bar"><span class="imp-label">role_family</span><div class="imp-fill" style="--w:2.6%">0.021</div></div>
+                    <div class="imp-bar"><span class="imp-label">location_group</span><div class="imp-fill" style="--w:1.8%">0.014</div></div>
+                    <div class="imp-bar"><span class="imp-label">skill_ai_ml</span><div class="imp-fill" style="--w:0.5%">0.004</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logarithmic salary equation -->
+        <div class="equation-card glass-card" style="margin-top: 2rem;">
+            <h3>Parametric Salary Model</h3>
+            <div class="equation">
+                Salary (LPA) = 7.20 + 5.30 · ln(Experience + 1)
+            </div>
+            <p class="equation-note">R² = 0.571 | Steepest growth: Years 1–4 (+₹1.8L/yr) | Plateau: beyond Year 8</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">◇</span>
+                <span class="logo-text">Command Q</span>
+                <p class="footer-tagline">Build for Bharat 2.0 Hackathon</p>
+                <p class="footer-team">Team Leader: Rajat Kumar Gupta (25BDA70384)</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <a href="#insights">Research Insights</a>
+                <a href="#engine-psychometric">Psychometric Engine</a>
+                <a href="#engine-skills">Skills Engine</a>
+                <a href="#engine-progression">Progression Engine</a>
+                <a href="#engine-company">Company Matching</a>
+                <a href="#bridges">Five Bridges</a>
+            </div>
+            <div class="footer-methodology">
+                <h4>Methodology</h4>
+                <p>4 datasets, 16,741 records. Non-parametric Mann-Whitney U tests. Repeated 5-fold stratified CV. Bonferroni-corrected p-values. Full reproducibility.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Command Q. Career Navigation System for Data Talent Workforce.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

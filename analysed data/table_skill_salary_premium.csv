@@ -1,0 +1,6 @@
+skill,share_postings,median_with,median_without,diff_overall,mannwhitney_p,diff_Junior,diff_Mid,diff_Senior
+big_data_skills,0.056342802901891656,12.5,8.0,4.5,7.596092485329326e-33,3.5,0.0,0.0
+maths_stats_skills,0.12766967252017086,12.5,8.0,4.5,6.019124532270798e-34,3.5,0.0,0.0
+coding_skills,0.23954166384161638,12.5,8.0,4.5,1.1931254608734202e-41,3.5,0.0,0.0
+ai_and_ml_skills,0.07620855651230592,12.5,8.0,4.5,1.3183302982204439e-43,3.5,0.0,0.0
+dashboard_and_storytelling_skills,0.07146247203200216,8.0,12.5,-4.5,0.5701348438574854,3.5,0.0,0.0
